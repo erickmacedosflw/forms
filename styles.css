@@ -1,0 +1,283 @@
+:root {
+  --bg: #0f1225;
+  --card: #171a32;
+  --card-2: #1f2347;
+  --text: #edf0ff;
+  --muted: #b9bfd9;
+  --primary: #5b67f1;
+  --danger: #ef5d7a;
+  --radius: 18px;
+  --shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% -10%, #2f3779 10%, transparent 42%),
+    radial-gradient(circle at 90% 110%, #2f3779 10%, transparent 42%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+.app-shell {
+  padding: 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand h1 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.brand p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 12px;
+  background: linear-gradient(140deg, #6b75ff, #5460e5);
+  font-weight: 800;
+}
+
+.glass {
+  background: rgba(23, 26, 50, 0.8);
+  border: 1px solid rgba(124, 136, 255, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 1rem;
+}
+
+.panel {
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.controls-panel {
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2.5rem);
+  overflow: auto;
+}
+
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.stack {
+  display: grid;
+  gap: 0.8rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid rgba(169, 179, 255, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+}
+
+.btn {
+  border: 0;
+  border-radius: 12px;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), #7782ff);
+  color: white;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+.field-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.btn-chip {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font-size: 0.82rem;
+}
+
+.field-editor {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 0.8rem;
+}
+
+.preview-panel {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.device-toggle {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.btn-icon {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font-size: 0.82rem;
+}
+
+.btn-icon.active {
+  background: var(--primary);
+  color: white;
+}
+
+.preview-wrapper {
+  margin-top: 1rem;
+  display: grid;
+  place-items: center;
+  min-height: 560px;
+  border-radius: var(--radius);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.form-preview {
+  width: min(100%, 900px);
+  padding: 1.4rem;
+  border-radius: 20px;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.form-head h2 {
+  margin-bottom: 0.35rem;
+}
+
+.form-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.form-field {
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 0.4rem;
+}
+
+.form-field.selected {
+  border-color: var(--primary);
+  background: rgba(91, 103, 241, 0.1);
+}
+
+.field-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.field-row .hint {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.remove-btn {
+  background: transparent;
+  color: var(--danger);
+  padding: 0;
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 1.5rem;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+}
+
+.device-tablet .form-preview {
+  width: min(100%, 720px);
+}
+
+.device-mobile .form-preview {
+  width: min(100%, 390px);
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .controls-panel {
+    position: static;
+    max-height: initial;
+  }
+}
